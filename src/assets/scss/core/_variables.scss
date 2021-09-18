@@ -9,6 +9,8 @@ $colors: (
 ) !default;
 
 $text: (
+  "base": #6e7191,
+  "strong": #4E4B66,
   "placeholder": map-get($colors, "gray"),
 ) !default;
 
@@ -23,7 +25,6 @@ $dashboard: (
 
 $app-bar: (
   "blue": map-get($colors, "blue"),
-  "main": #6e7191,
   "second": map-get($colors, "background"),
   "border": #e6e9f1,
 ) !default;

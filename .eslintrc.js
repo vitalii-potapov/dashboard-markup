@@ -25,7 +25,7 @@ module.exports = {
     'vue/singleline-html-element-content-newline': ['error', {
       ignoreWhenNoAttributes: true,
       ignoreWhenEmpty: true,
-      ignores: ['v-icon', 's-icon'],
+      ignores: ['span', 'v-icon', 's-icon', 's-btn'],
     }],
     'max-len': 'off',
     'vue/max-len': ['error', {

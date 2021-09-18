@@ -1,9 +1,11 @@
 <template>
   <v-app>
-    <Drawer />
+    <drawer />
     <div class="layout-body flex-grow-1">
-      <AppBar />
-      <AppView />
+      <app-bar />
+      <app-view>
+        <slot />
+      </app-view>
     </div>
   </v-app>
 </template>

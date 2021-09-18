@@ -1,16 +1,18 @@
 <template>
   <dashboard-layout>
-    <!-- content -->
+    <tickets />
   </dashboard-layout>
 </template>
 
 <script>
 import DashboardLayout from '@/layouts/DashboardLayout.vue';
+import Tickets from '@/pages/Tickets.vue';
 
 export default {
   name: 'App',
   components: {
     DashboardLayout,
+    Tickets,
   },
 };
 </script>

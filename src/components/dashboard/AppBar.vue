@@ -22,7 +22,8 @@
         <s-icon>settings</s-icon>
       </s-btn>
       <s-btn class="app-bar__btn font-weight-medium" outlined>
-        TextMagic
+        <span class="mr-2">TextMagic</span>
+        <v-img class="app-bar__avatar" src="@/assets/img/dashboard/app-bar/avatar.png" />
       </s-btn>
     </div>
   </v-app-bar>
@@ -38,7 +39,7 @@ export default {
 @import "@/assets/scss/core/_variables.scss";
 
 #app-bar {
-  color: map-get($app-bar, "main");
+  color: map-get($text, "base");
 
   .v-toolbar__content {
     display: flex;
@@ -53,14 +54,14 @@ export default {
   }
 
   .app-bar__right-col > .s-btn:not(:last-child) {
-    margin-right: 14px;
+    margin-right: 11px;
   }
 
   .app-bar__btn {
     height: unset;
     padding: 6px 11px;
     font-size: 14px;
-    color: map-get($app-bar, "main");
+    color: map-get($text, "base");
     &:hover {
       color: map-get($app-bar, "blue");
     }
@@ -111,7 +112,7 @@ export default {
   }
 
   .app-bar__search {
-    color: map-get($app-bar, "main");
+    color: map-get($text, "base");
     max-width: 320px;
     width: 100%;
   }
@@ -124,6 +125,11 @@ export default {
     .v-ripple__container {
       color: #ffffff;
     }
+  }
+
+  .app-bar__avatar {
+    width: 18px;
+    height: 18px;
   }
 }
 </style>
