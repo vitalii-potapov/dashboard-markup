@@ -22,7 +22,7 @@ export default {
     isArray: {
       type: Function,
       default: isArray,
-    }
+    },
   },
   computed: {
     label() {

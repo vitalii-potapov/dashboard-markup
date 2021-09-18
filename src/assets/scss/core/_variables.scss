@@ -1,11 +1,29 @@
+$default-container: 1050;
 $default-font-size: 16px;
 $default-transition: 0.3s cubic-bezier(0.25, 0.8, 0.5, 1), visibility 0s;
 
 $colors: (
   "blue": #008cff,
+  "gray": #a0a3bd,
+  "background": #f7f7fc,
+) !default;
+
+$text: (
+  "placeholder": map-get($colors, "gray"),
+) !default;
+
+$user-status: (
+  "online": #69bc35,
 ) !default;
 
 $dashboard: (
   "logo": map-get($colors, "blue"),
-  "nav-item": #a0a3bd,
+  "nav-item": map-get($colors, "gray"),
+) !default;
+
+$app-bar: (
+  "blue": map-get($colors, "blue"),
+  "main": #6e7191,
+  "second": map-get($colors, "background"),
+  "border": #e6e9f1,
 ) !default;

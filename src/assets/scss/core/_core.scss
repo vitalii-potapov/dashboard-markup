@@ -1,5 +1,11 @@
+.v-application--wrap {
+  flex-flow: row;
+  background: map-get($colors, "background");
+}
+
 .s-icon,
 .drawer__icon--touchpoint-icon,
-.v-icon.v-icon {
+.v-icon.v-icon,
+.app-bar__btn {
   transition: $default-transition;
 }
