@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import vuetify from './plugins/vuetify';
-import './plugins/base';
+import './plugins/share-components';
 import App from './App.vue';
 
 Vue.config.productionTip = false;

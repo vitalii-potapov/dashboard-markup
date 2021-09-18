@@ -22,7 +22,7 @@ export default {
     isArray: {
       type: Function,
       default: isArray,
-    },
+    }
   },
   computed: {
     label() {
@@ -46,6 +46,5 @@ export default {
 .s-icon {
   width: 18px;
   height: 18px;
-  transition: .3s cubic-bezier(.25,.8,.5,1),visibility 0s;
 }
 </style>
