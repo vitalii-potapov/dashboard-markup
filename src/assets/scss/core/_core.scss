@@ -1,3 +1,23 @@
+html,
+body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.v-application {
+  height: 100%;
+}
+
+.v-main {
+  height: calc(100% - 52px);
+  overflow: hidden auto;
+}
+
+.s-container {
+  width: $default-container;
+  margin: 24px auto;
+}
+
 .v-application--wrap {
   flex-flow: row;
   background: map-get($colors, "background");

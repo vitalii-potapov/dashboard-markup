@@ -1,7 +1,7 @@
 <template>
   <v-navigation-drawer
     id="drawer"
-    height="100%"
+    height="100vh"
     :mini-variant="internalMiniVariant"
     mini-variant-width="68"
     permanent
