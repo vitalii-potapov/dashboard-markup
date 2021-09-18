@@ -42,6 +42,11 @@
           </v-icon>
         </v-list-item-icon>
         <v-list-item-title>{{ tab.label }}</v-list-item-title>
+        <transition appear name="drawer-fade">
+          <div v-if="tab.count && !drawerIsMoving" class="drawer__nav-item-count">
+            <span>{{ tab.count }}</span>
+          </div>
+        </transition>
       </v-list-item>
     </div>
 
@@ -82,7 +87,7 @@ export default {
       type: Array,
       default: () => [
         { link: '#', icon: 'home', label: 'Home' },
-        { link: '#', icon: 'question_answer', label: 'Messenger' },
+        { link: '#', icon: 'question_answer', label: 'Messenger', count: 12 },
         { link: '#', icon: 'email', label: 'Tickets' },
         { link: '#', icon: 'campaign', label: 'Campaigns', assetsIcon: true },
         { link: '#', icon: 'group', label: 'Contacts' },
@@ -97,7 +102,16 @@ export default {
   data: (vm) => ({
     internalMiniVariant: vm.miniVariant,
     internalActiveTab: vm.activeTab,
+    drawerIsMoving: false,
   }),
+  watch: {
+    internalMiniVariant() {
+      this.drawerIsMoving = true;
+      setTimeout(() => {
+        this.drawerIsMoving = false;
+      }, 300);
+    },
+  },
   methods: {
     onClick(tabLabel) {
       this.internalActiveTab = tabLabel;
@@ -132,6 +146,15 @@ export default {
       display: initial;
       clip: rect(1px,1px,1px,1px);
       overflow: hidden;
+    }
+    .drawer__nav-item-count {
+      height: initial;
+      width: initial;
+      overflow: initial;
+      clip: initial;
+      bottom: inherit;
+      top: 5px;
+      right: 3px;
     }
   }
 
@@ -233,5 +256,35 @@ export default {
   .drawer__nav-item--active {
     color: #ffffff;
   }
+
+  .drawer__nav-item-count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 1;
+    color: #ffffff;
+
+    span {
+      padding: 3px 6px;
+      background-color: map-get($colors, "red");
+      border-radius: 13px;
+    }
+  }
+}
+
+.drawer-fade-leave,
+.drawer-fade-enter {
+  opacity: 0 !important;
+}
+.drawer-fade-enter-to {
+  opacity: 1 !important;
+}
+.drawer-fade-enter-active {
+  transition: $default-transition;
 }
 </style>
