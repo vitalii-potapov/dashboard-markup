@@ -42,17 +42,24 @@
     </div>
 
     <template v-slot:append>
-      <div class="bar__nav mb-2">
-        <v-list-item class="bar__nav-item px-0">
+      <div class="bar__toggle">
+        <v-list-item class="bar__toggle-item px-0">
           <v-btn
             blocks
-            class="font-weight-regular text-none"
+            class="bar__toggle-btn"
             dark
             plain
             @click="toggleBar"
           >
             <v-list-item-icon>
-              <v-icon v-if="miniVariant" class="material-icons-round" color="#currentColor">menu</v-icon>
+              <v-icon
+                v-if="miniVariant"
+                class="material-icons-round"
+                color="#currentColor"
+                size="18"
+              >
+                menu
+              </v-icon>
               <s-icon v-else>menu-open</s-icon>
             </v-list-item-icon>
             <v-list-item-title>Collapse menu</v-list-item-title>
@@ -98,36 +105,72 @@ export default {
 @import "@/assets/scss/core/_variables.scss";
 
 #app-bar {
+  &.v-navigation-drawer--mini-variant {
+    .bar__nav-item > :first-child,
+    .bar__toggle-item,
+    .bar__toggle-btn .v-list-item__icon {
+      margin: 0;
+    }
+    .v-list-item {
+      justify-content: unset;
+    }
+    .bar__icon--touchpoint-icon {
+      color: map-get($dashboard, "nav-item");
+    }
+    .bar__icon--touchpoint,
+    .bar__toggle-btn .v-list-item__title {
+      position: absolute !important;
+      display: initial;
+      clip: rect(1px,1px,1px,1px);
+      overflow: hidden;
+    }
+  }
+
   .bar__logo {
     display: flex;
     align-items: center;
     padding: 18px 8px 18px 24px;
   }
+
   .bar__icon--touchpoint-icon {
+    flex-shrink: 0;
     width: 18px;
     height: 18px;
     margin-right: 6px;
     color: map-get($dashboard, "logo");
   }
+
   .bar__icon--touchpoint {
+    flex-shrink: 0;
     width: 86px;
     height: 18px;
     color: #ffffff;
   }
+
   .bar__nav {
     display: flex;
     flex-flow: column;
     padding-right: 8px;
     padding-left: 8px;
   }
+
   .v-list-item {
     min-height: 44px;
+    padding: 0 17px;
 
     &:hover:before {
       border-radius: 8px;
     }
   }
-  .bar__nav-item {
+
+  .bar__toggle {
+    margin-bottom: 8px;
+    padding-right: 8px;
+    padding-left: 8px;
+  }
+
+  .bar__nav-item,
+  .bar__toggle-item {
     color: map-get($dashboard, "nav-item");
     border-radius: 8px;
 
@@ -143,10 +186,22 @@ export default {
     .v-list-item__icon {
       flex-shrink: 0;
       align-self: unset;
-      min-width: 16px;
+      min-width: 18px;
       margin: 0 17px 0 0;
     }
   }
+
+  .bar__toggle-btn  {
+    min-width: unset;
+    padding: 0 17px;
+
+    .v-list-item__title {
+      font-weight: 400;
+      letter-spacing: 0;
+      text-transform: initial;
+    }
+  }
+
   .bar__nav-item--active {
     color: #ffffff;
   }
