@@ -15,7 +15,10 @@ body {
 
 .s-container {
   width: $default-container;
-  margin: 24px auto;
+  margin-right: auto;
+  margin-left: auto;
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 .v-application--wrap {

@@ -48,6 +48,7 @@ export default {
     height: 28px;
     padding: 0;
     color: map-get($text, "base");
+    background: #ffffff;
 
     &:not(:last-child) {
       margin-right: 8px;

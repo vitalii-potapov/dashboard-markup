@@ -6,6 +6,7 @@ $colors: (
   "blue": #008cff,
   "gray": #a0a3bd,
   "red": #ed6a61,
+  "orange": #ff8c00,
   "background": #f7f7fc,
 ) !default;
 
@@ -39,4 +40,9 @@ $status: (
   "yellow": #d8902a,
   "yellow-fill": #fef9f2,
   "yellow-stroke": #f7d6a6,
+) !default;
+
+$notification: (
+  "blue": map-get($colors, "blue"),
+  "blue-fill": #e1edfa,
 ) !default;
