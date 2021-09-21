@@ -12,6 +12,7 @@ $colors: (
 $text: (
   "base": #6e7191,
   "strong": #4E4B66,
+  "strong-darken": #3B4857,
   "placeholder": map-get($colors, "gray"),
 ) !default;
 
@@ -28,4 +29,14 @@ $app-bar: (
   "blue": map-get($colors, "blue"),
   "second": map-get($colors, "background"),
   "border": #e6e9f1,
+) !default;
+
+$profile: (
+  "active": map-get($colors, "blue"),
+) !default;
+
+$status: (
+  "yellow": #d8902a,
+  "yellow-fill": #fef9f2,
+  "yellow-stroke": #f7d6a6,
 ) !default;

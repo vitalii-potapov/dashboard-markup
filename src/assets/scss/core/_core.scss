@@ -29,3 +29,15 @@ body {
 .app-bar__btn {
   transition: $default-transition;
 }
+
+.text-base {
+  color: map-get($text, 'base') !important;
+}
+
+.text-strong {
+  color: map-get($text, 'base') !important;
+}
+
+.text-strong-darken {
+  color: map-get($text, 'strong-darken') !important;
+}

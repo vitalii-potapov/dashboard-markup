@@ -68,6 +68,12 @@ export default {
     &:before {
       background-color: #ffffff;
     }
+
+    &:not(.app-bar__btn--online):not(.app-bar__btn--blue) {
+      .v-ripple__container {
+        color: map-get($app-bar, "blue");
+      }
+    }
   }
 
   .app-bar__btn--blue {

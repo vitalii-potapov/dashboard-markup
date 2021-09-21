@@ -46,14 +46,8 @@ export default {
   props: {
     bgImg: {
       type: String,
-      default: 'assets/img/pages/tickets/bg.jpg',
+      default: '@/assets/img/pages/tickets/bg.jpg',
     },
-  },
-  computed: {
-    // bgSrc() {
-    //   // eslint-disable-next-line import/extensions, import/no-unresolved, global-require
-    //   return `${)}${this.bgImg}`;
-    // },
   },
 };
 </script>
@@ -88,6 +82,7 @@ export default {
     top: 21px;
     left: 13px;
     right: 27px;
+    z-index: 1;
     display: flex;
     justify-content: space-between;
     align-items: center;

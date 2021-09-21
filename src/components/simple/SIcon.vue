@@ -15,6 +15,10 @@ import isArray from 'lodash/isArray';
 export default {
   name: 'SIcon',
   props: {
+    assetsIcon: {
+      type: Boolean,
+      default: false,
+    },
     size: {
       type: [Number, String, Array],
       default: 0,
