@@ -21,17 +21,26 @@
       <s-btn class="app-bar__icon-btn" icon small>
         <s-icon>settings</s-icon>
       </s-btn>
-      <s-btn class="app-bar__btn font-weight-medium" outlined>
-        <span class="mr-2">TextMagic</span>
-        <v-img class="app-bar__avatar" src="@/assets/img/dashboard/app-bar/avatar.png" />
-      </s-btn>
+      <profile-menu>
+        <template #activator="{ on }">
+          <s-btn class="app-bar__btn font-weight-medium" outlined v-on="on">
+            <span class="mr-2">TextMagic</span>
+            <v-img class="app-bar__avatar" src="@/assets/img/dashboard/app-bar/avatar.png" />
+          </s-btn>
+        </template>
+      </profile-menu>
     </div>
   </v-app-bar>
 </template>
 
 <script>
+import ProfileMenu from '@/components/share/profile-menu/ProfileMenu.vue';
+
 export default {
   name: 'AppBar',
+  components: {
+    ProfileMenu,
+  },
 };
 </script>
 

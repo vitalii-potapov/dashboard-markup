@@ -20,7 +20,9 @@
         </v-icon>
       </a>
     </div>
+
     <profile-control />
+
     <v-tabs
       active-class="text-strong"
       background-color="transparent"
